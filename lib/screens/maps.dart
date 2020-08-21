@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapSample extends StatefulWidget {
-
-  double latitude  ;
-  double longitude ;
+  double latitude;
+  double longitude;
 
   MapSample({@required this.latitude, @required this.longitude});
 
@@ -15,7 +14,6 @@ class MapSample extends StatefulWidget {
 }
 
 class MapSampleState extends State<MapSample> {
-
   Completer<GoogleMapController> _controller = Completer();
 
   @override
@@ -24,18 +22,16 @@ class MapSampleState extends State<MapSample> {
       Marker(
           position: LatLng(widget.latitude, widget.longitude),
           markerId: MarkerId("CurrentLocation"),
-        infoWindow: InfoWindow(
-          title: "Your Location",
-        )
-      ),
+          infoWindow: InfoWindow(
+            title: "Your Location",
+          )),
     ];
     CameraPosition _cameraPosition = CameraPosition(
-     // bearing: 192.8334901395799,
+      // bearing: 192.8334901395799,
       target: LatLng(widget.latitude, widget.longitude),
       zoom: 15.4746,
-     // tilt: 59.440717697143555,
+      // tilt: 59.440717697143555,
     );
-
 
     return new Scaffold(
       body: GoogleMap(
@@ -46,9 +42,6 @@ class MapSampleState extends State<MapSample> {
           _controller.complete(controller);
         },
       ),
-
     );
   }
-
-
 }

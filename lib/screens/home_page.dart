@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_permissionGranted == PermissionStatus.granted) {
         // To get the location once
 
-       // await location.getLocation().then((value) => _locationData = value);
+        // await location.getLocation().then((value) => _locationData = value);
 
         // To get the location whenever it changes
         location.onLocationChanged.listen((currentLocation) {
